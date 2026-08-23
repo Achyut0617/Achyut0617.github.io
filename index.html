@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achyut Yesare — AI / ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #11141B;
+    --bg-raise: #171B24;
+    --ink: #EDEBE3;
+    --ink-dim: #9BA0AE;
+    --line: #2A2F3A;
+    --amber: #E8A33D;
+    --teal: #6FBFB0;
+    --serif: 'Fraunces', serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  .wrap{max-width:960px; margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(17,20,27,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px;}
+  .nav-mark{font-family:var(--mono); font-size:13px; color:var(--amber); letter-spacing:0.02em;}
+  .nav-links{display:flex; gap:28px; list-style:none;}
+  .nav-links a{font-size:14px; color:var(--ink-dim); text-decoration:none; transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  @media (max-width:600px){ .nav-links{gap:16px;} .nav-links a{font-size:12.5px;} }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:110px 0 90px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .contour-field{
+    position:absolute; inset:0;
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; color:var(--teal);
+    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--teal);}
+  h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(42px, 7vw, 74px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    max-width:11ch;
+  }
+  h1 em{font-style:italic; font-weight:400; color:var(--amber);}
+  .hero-sub{
+    margin-top:24px;
+    max-width:52ch;
+    font-size:17px;
+    color:var(--ink-dim);
+  }
+  .hero-links{
+    margin-top:38px;
+    display:flex; flex-wrap:wrap; gap:14px;
+  }
+  .btn{
+    font-family:var(--mono); font-size:13px;
+    padding:11px 18px;
+    border:1px solid var(--line);
+    border-radius:2px;
+    text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .2s, background .2s;
+  }
+  .btn:hover{border-color:var(--amber); background:var(--bg-raise);}
+  .btn.primary{background:var(--amber); color:#181207; border-color:var(--amber); font-weight:500;}
+  .btn.primary:hover{background:#f2b256;}
+
+  /* SECTIONS */
+  section{padding:74px 0; border-bottom:1px solid var(--line);}
+  .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:36px;}
+  .sec-num{font-family:var(--mono); font-size:12.5px; color:var(--ink-dim);}
+  .sec-title{font-family:var(--serif); font-size:28px; font-weight:600;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:48px;}
+  @media (max-width:720px){ .about-grid{grid-template-columns:1fr;} }
+  .about-text p{color:var(--ink-dim); margin-bottom:16px; font-size:15.5px;}
+  .about-text strong{color:var(--ink); font-weight:500;}
+  .stat-block{border-left:1px solid var(--line); padding-left:20px;}
+  .stat-block .row{margin-bottom:18px;}
+  .stat-block .label{font-family:var(--mono); font-size:11.5px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.06em;}
+  .stat-block .val{font-family:var(--serif); font-size:20px; margin-top:3px;}
+
+  /* SKILLS */
+  .skill-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  @media (max-width:700px){ .skill-groups{grid-template-columns:1fr 1fr;} }
+  @media (max-width:460px){ .skill-groups{grid-template-columns:1fr;} }
+  .skill-group h4{font-family:var(--mono); font-size:12px; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;}
+  .skill-group ul{list-style:none;}
+  .skill-group li{font-size:14.5px; color:var(--ink-dim); padding:5px 0; border-bottom:1px dashed var(--line);}
+  .skill-group li:last-child{border-bottom:none;}
+
+  /* PROJECTS */
+  .project{
+    display:grid; grid-template-columns:64px 1fr;
+    gap:20px;
+    padding:26px 0;
+    border-top:1px solid var(--line);
+  }
+  .project:first-of-type{border-top:none;}
+  .p-index{font-family:var(--mono); font-size:13px; color:var(--ink-dim); padding-top:3px;}
+  .p-title{font-family:var(--serif); font-size:21px; font-weight:600; margin-bottom:8px;}
+  .p-desc{color:var(--ink-dim); font-size:15px; margin-bottom:12px; max-width:60ch;}
+  .p-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .p-tags span{
+    font-family:var(--mono); font-size:11px; color:var(--teal);
+    border:1px solid var(--line); padding:3px 9px; border-radius:20px;
+  }
+  .p-link{font-family:var(--mono); font-size:12.5px; color:var(--amber); text-decoration:none; margin-top:10px; display:inline-block;}
+  .p-link:hover{text-decoration:underline;}
+
+  /* CONTACT */
+  .contact-inner{text-align:left;}
+  .contact-title{font-family:var(--serif); font-size:38px; font-weight:600; max-width:14ch; line-height:1.1; margin-bottom:20px;}
+  .contact-title .accent{color:var(--amber); font-style:italic; font-weight:400;}
+  .contact-links{display:flex; flex-wrap:wrap; gap:14px; margin-top:30px;}
+
+  footer{padding:28px 0; text-align:center;}
+  footer p{font-family:var(--mono); font-size:12px; color:var(--ink-dim);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">AY / model.log</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="contour-field" viewBox="0 0 960 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#6FBFB0" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#6FBFB0" stop-opacity="0.05"/>
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#fade)" stroke-width="1">
+      <path d="M -50 80 C 200 20, 400 140, 650 60 S 1000 100, 1050 40"/>
+      <path d="M -50 140 C 220 70, 420 210, 660 130 S 1000 170, 1050 110"/>
+      <path d="M -50 200 C 240 120, 440 280, 670 200 S 1000 240, 1050 180"/>
+      <path d="M -50 260 C 260 170, 460 350, 680 270 S 1000 310, 1050 250"/>
+      <path d="M -50 320 C 280 220, 480 420, 690 340 S 1000 380, 1050 320"/>
+      <path d="M -50 380 C 300 270, 500 480, 700 400 S 1000 450, 1050 390"/>
+    </g>
+    <circle id="descPoint" r="4.5" fill="#E8A33D">
+      <animateMotion dur="9s" repeatCount="indefinite"
+        path="M -20 90 C 220 40, 410 150, 650 70 S 990 105, 1040 50" />
+    </circle>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <div class="eyebrow">AI / ML Engineer</div>
+    <h1>Achyut Yesare<br><em>builds models that learn.</em></h1>
+    <p class="hero-sub">I work at the intersection of machine learning research and production systems — training, evaluating, and shipping models that hold up outside the notebook.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="resume.pdf">Resume ↓</a>
+      <a class="btn" href="https://github.com/Achyut0617" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/achyut-yesare-a5754a31b" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">About</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm an <strong>AI/ML engineer</strong> focused on the full lifecycle of a model — from data pipelines and training loops to deployment and monitoring. I like problems where the interesting part isn't just accuracy on a benchmark, but whether the thing actually works in production.</p>
+        <p>Recent work spans <strong>deep learning</strong>, <strong>NLP</strong>, and applied research, with a growing focus on making models faster, cheaper, and more reliable to run at scale.</p>
+        <p>Edit this section with your own story, background, and focus areas.</p>
+      </div>
+      <div class="stat-block">
+        <div class="row"><div class="label">Based in</div><div class="val">India</div></div>
+        <div class="row"><div class="label">Focus</div><div class="val">Applied ML</div></div>
+        <div class="row"><div class="label">Currently</div><div class="val">Open to roles</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Skills</h2></div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <ul><li>Python</li><li>SQL</li><li>C++</li><li>JavaScript</li></ul>
+      </div>
+      <div class="skill-group">
+        <h4>ML / DL</h4>
+        <ul><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>Hugging Face</li></ul>
+      </div>
+      <div class="skill-group">
+        <h4>Tooling</h4>
+        <ul><li>Docker</li><li>Git</li><li>AWS / GCP</li><li>MLflow</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Projects</h2></div>
+
+    <div class="project">
+      <div class="p-index">01</div>
+      <div>
+        <div class="p-title">Project One</div>
+        <p class="p-desc">Replace with a one- or two-sentence description: what the model does, what problem it solves, and any results worth noting (accuracy, latency, scale).</p>
+        <div class="p-tags"><span>PyTorch</span><span>NLP</span><span>Transformers</span></div>
+        <a class="p-link" href="#">View repo →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="p-index">02</div>
+      <div>
+        <div class="p-title">Project Two</div>
+        <p class="p-desc">Replace with your second project. Lead with the outcome, then the method.</p>
+        <div class="p-tags"><span>Computer Vision</span><span>TensorFlow</span></div>
+        <a class="p-link" href="#">View repo →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="p-index">03</div>
+      <div>
+        <div class="p-title">Project Three</div>
+        <p class="p-desc">Replace with your third project — could be a research reproduction, a deployed pipeline, or a Kaggle result.</p>
+        <div class="p-tags"><span>MLOps</span><span>Docker</span><span>AWS</span></div>
+        <a class="p-link" href="#">View repo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-inner">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Contact</h2></div>
+    <div class="contact-title">Let's build something <span class="accent">that learns.</span></div>
+    <p style="color:var(--ink-dim); max-width:50ch;">Open to AI/ML roles and collaborations. Reach out by email or on LinkedIn.</p>
+    <div class="contact-links">
+      <a class="btn primary" href="mailto:your-email@example.com">Email me</a>
+      <a class="btn" href="https://github.com/Achyut0617" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://linkedin.com/in/achyut-yesare-a5754a31b" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Achyut Yesare — built with care.</p>
+</footer>
+
+</body>
+</html>
