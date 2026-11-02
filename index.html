@@ -1,299 +1,960 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Achyut Yesare — AI / ML Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #11141B;
-    --bg-raise: #171B24;
-    --ink: #EDEBE3;
-    --ink-dim: #9BA0AE;
-    --line: #2A2F3A;
-    --amber: #E8A33D;
-    --teal: #6FBFB0;
-    --serif: 'Fraunces', serif;
-    --sans: 'Inter', sans-serif;
-    --mono: 'JetBrains Mono', monospace;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  }
-  a{color:inherit;}
-  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  .wrap{max-width:960px; margin:0 auto; padding:0 28px;}
+  <title>Achyut Yesare | AI/ML Engineer</title>
+  <meta name="description" content="Achyut Yesare — AI/ML engineering, machine learning systems, edge AI, computer vision, and intelligent applications.">
+  <meta name="author" content="Achyut Yesare">
+  <meta name="theme-color" content="#11141B">
 
-  /* NAV */
-  nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(17,20,27,0.85);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px;}
-  .nav-mark{font-family:var(--mono); font-size:13px; color:var(--amber); letter-spacing:0.02em;}
-  .nav-links{display:flex; gap:28px; list-style:none;}
-  .nav-links a{font-size:14px; color:var(--ink-dim); text-decoration:none; transition:color .2s;}
-  .nav-links a:hover{color:var(--ink);}
-  @media (max-width:600px){ .nav-links{gap:16px;} .nav-links a{font-size:12.5px;} }
+  <meta property="og:title" content="Achyut Yesare | AI/ML Engineer">
+  <meta property="og:description" content="Building intelligent systems through machine learning, computer vision, and engineering.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://achyut0617.github.io/">
 
-  /* HERO */
-  .hero{
-    position:relative;
-    padding:110px 0 90px;
-    overflow:hidden;
-    border-bottom:1px solid var(--line);
-  }
-  .contour-field{
-    position:absolute; inset:0;
-    opacity:0.55;
-    pointer-events:none;
-  }
-  .hero-inner{position:relative; z-index:2;}
-  .eyebrow{
-    font-family:var(--mono); font-size:12.5px; color:var(--teal);
-    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:22px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{content:''; width:22px; height:1px; background:var(--teal);}
-  h1{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:clamp(42px, 7vw, 74px);
-    line-height:1.02;
-    letter-spacing:-0.01em;
-    max-width:11ch;
-  }
-  h1 em{font-style:italic; font-weight:400; color:var(--amber);}
-  .hero-sub{
-    margin-top:24px;
-    max-width:52ch;
-    font-size:17px;
-    color:var(--ink-dim);
-  }
-  .hero-links{
-    margin-top:38px;
-    display:flex; flex-wrap:wrap; gap:14px;
-  }
-  .btn{
-    font-family:var(--mono); font-size:13px;
-    padding:11px 18px;
-    border:1px solid var(--line);
-    border-radius:2px;
-    text-decoration:none;
-    display:inline-flex; align-items:center; gap:8px;
-    transition:border-color .2s, background .2s;
-  }
-  .btn:hover{border-color:var(--amber); background:var(--bg-raise);}
-  .btn.primary{background:var(--amber); color:#181207; border-color:var(--amber); font-weight:500;}
-  .btn.primary:hover{background:#f2b256;}
+  <link rel="canonical" href="https://achyut0617.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  /* SECTIONS */
-  section{padding:74px 0; border-bottom:1px solid var(--line);}
-  .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:36px;}
-  .sec-num{font-family:var(--mono); font-size:12.5px; color:var(--ink-dim);}
-  .sec-title{font-family:var(--serif); font-size:28px; font-weight:600;}
+  <style>
+    :root {
+      --bg: #11141B;
+      --surface: #171B24;
+      --surface-hover: #1D2330;
+      --ink: #EDEBE3;
+      --ink-dim: #9BA0AE;
+      --line: #2A2F3A;
+      --amber: #E8A33D;
+      --teal: #6FBFB0;
+      --serif: 'Fraunces', serif;
+      --sans: 'Inter', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --width: 1040px;
+    }
 
-  /* ABOUT */
-  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:48px;}
-  @media (max-width:720px){ .about-grid{grid-template-columns:1fr;} }
-  .about-text p{color:var(--ink-dim); margin-bottom:16px; font-size:15.5px;}
-  .about-text strong{color:var(--ink); font-weight:500;}
-  .stat-block{border-left:1px solid var(--line); padding-left:20px;}
-  .stat-block .row{margin-bottom:18px;}
-  .stat-block .label{font-family:var(--mono); font-size:11.5px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.06em;}
-  .stat-block .val{font-family:var(--serif); font-size:20px; margin-top:3px;}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* SKILLS */
-  .skill-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
-  @media (max-width:700px){ .skill-groups{grid-template-columns:1fr 1fr;} }
-  @media (max-width:460px){ .skill-groups{grid-template-columns:1fr;} }
-  .skill-group h4{font-family:var(--mono); font-size:12px; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;}
-  .skill-group ul{list-style:none;}
-  .skill-group li{font-size:14.5px; color:var(--ink-dim); padding:5px 0; border-bottom:1px dashed var(--line);}
-  .skill-group li:last-child{border-bottom:none;}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-  /* PROJECTS */
-  .project{
-    display:grid; grid-template-columns:64px 1fr;
-    gap:20px;
-    padding:26px 0;
-    border-top:1px solid var(--line);
-  }
-  .project:first-of-type{border-top:none;}
-  .p-index{font-family:var(--mono); font-size:13px; color:var(--ink-dim); padding-top:3px;}
-  .p-title{font-family:var(--serif); font-size:21px; font-weight:600; margin-bottom:8px;}
-  .p-desc{color:var(--ink-dim); font-size:15px; margin-bottom:12px; max-width:60ch;}
-  .p-tags{display:flex; flex-wrap:wrap; gap:8px;}
-  .p-tags span{
-    font-family:var(--mono); font-size:11px; color:var(--teal);
-    border:1px solid var(--line); padding:3px 9px; border-radius:20px;
-  }
-  .p-link{font-family:var(--mono); font-size:12.5px; color:var(--amber); text-decoration:none; margin-top:10px; display:inline-block;}
-  .p-link:hover{text-decoration:underline;}
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* CONTACT */
-  .contact-inner{text-align:left;}
-  .contact-title{font-family:var(--serif); font-size:38px; font-weight:600; max-width:14ch; line-height:1.1; margin-bottom:20px;}
-  .contact-title .accent{color:var(--amber); font-style:italic; font-weight:400;}
-  .contact-links{display:flex; flex-wrap:wrap; gap:14px; margin-top:30px;}
+    a {
+      color: inherit;
+    }
 
-  footer{padding:28px 0; text-align:center;}
-  footer p{font-family:var(--mono); font-size:12px; color:var(--ink-dim);}
-</style>
+    a:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(var(--width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .mono {
+      font-family: var(--mono);
+    }
+
+    .muted {
+      color: var(--ink-dim);
+    }
+
+    .accent {
+      color: var(--amber);
+    }
+
+    .teal {
+      color: var(--teal);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 20px;
+      z-index: 100;
+      padding: 10px 16px;
+      background: var(--amber);
+      color: #181207;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(17, 20, 27, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-mark {
+      color: var(--amber);
+      font-family: var(--mono);
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink-dim);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--amber);
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 100px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contour-field {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.42;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 26px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 1px;
+      background: var(--teal);
+      content: '';
+    }
+
+    h1 {
+      max-width: 850px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 8vw, 86px);
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+    }
+
+    h1 em {
+      color: var(--amber);
+      font-weight: 400;
+    }
+
+    .hero-sub {
+      max-width: 620px;
+      margin-top: 28px;
+      color: var(--ink-dim);
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.85;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 10px 17px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 12px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+
+    .btn:hover {
+      border-color: var(--amber);
+      background: var(--surface);
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      border-color: var(--amber);
+      background: var(--amber);
+      color: #181207;
+      font-weight: 500;
+    }
+
+    .btn.primary:hover {
+      background: #F2B256;
+    }
+
+    .hero-note {
+      margin-top: 54px;
+      color: var(--ink-dim);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Shared sections */
+
+    section {
+      padding: 82px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 17px;
+      margin-bottom: 38px;
+    }
+
+    .sec-num {
+      color: var(--ink-dim);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(27px, 4vw, 34px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin-top: -20px;
+      margin-bottom: 35px;
+      color: var(--ink-dim);
+      font-size: 14px;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 70px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: var(--ink-dim);
+      font-size: 15px;
+    }
+
+    .about-text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .about-facts {
+      border-left: 1px solid var(--line);
+      padding-left: 25px;
+    }
+
+    .fact {
+      margin-bottom: 24px;
+    }
+
+    .fact-label {
+      color: var(--ink-dim);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .fact-value {
+      margin-top: 5px;
+      font-family: var(--serif);
+      font-size: 19px;
+    }
+
+    /* Skills */
+
+    .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-group {
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .skill-group:hover {
+      border-color: rgba(111, 191, 176, 0.5);
+      transform: translateY(-3px);
+    }
+
+    .skill-group h3 {
+      margin-bottom: 17px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .skill-group ul {
+      list-style: none;
+    }
+
+    .skill-group li {
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--line);
+      color: var(--ink-dim);
+      font-size: 13px;
+    }
+
+    .skill-group li:last-child {
+      border-bottom: none;
+    }
+
+    /* Projects */
+
+    .project-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 20px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .p-index {
+      padding-top: 5px;
+      color: var(--ink-dim);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .p-title {
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .p-desc {
+      max-width: 690px;
+      margin-bottom: 15px;
+      color: var(--ink-dim);
+      font-size: 14px;
+    }
+
+    .p-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .p-tags span {
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+
+    /* Focus */
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .focus-item {
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .focus-item h3 {
+      margin-bottom: 7px;
+      font-family: var(--serif);
+      font-size: 19px;
+    }
+
+    .focus-item p {
+      color: var(--ink-dim);
+      font-size: 13px;
+    }
+
+    /* Contact */
+
+    .contact-title {
+      max-width: 650px;
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(35px, 6vw, 54px);
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    .contact-copy {
+      max-width: 520px;
+      color: var(--ink-dim);
+      font-size: 14px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    footer {
+      padding: 27px 0;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer p {
+      color: var(--ink-dim);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 90px 0 75px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-facts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        border-left: none;
+        border-top: 1px solid var(--line);
+        padding: 24px 0 0;
+      }
+
+      .fact {
+        margin-bottom: 0;
+      }
+
+      .skill-groups {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .wrap {
+        width: min(var(--width), calc(100% - 34px));
+      }
+
+      nav .wrap {
+        min-height: 62px;
+        gap: 12px;
+      }
+
+      .nav-mark {
+        font-size: 11px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 75px 0 65px;
+      }
+
+      .hero-note {
+        margin-top: 38px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .skill-groups,
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        grid-template-columns: 32px 1fr;
+        gap: 10px;
+      }
+
+      .p-title {
+        font-size: 20px;
+      }
+
+      footer .wrap {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="wrap">
-    <div class="nav-mark">AY / model.log</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav aria-label="Main navigation">
+    <div class="wrap">
+      <a class="nav-mark" href="#home">AY / engineering.log</a>
 
-<header class="hero">
-  <svg class="contour-field" viewBox="0 0 960 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#6FBFB0" stop-opacity="0.5"/>
-        <stop offset="100%" stop-color="#6FBFB0" stop-opacity="0.05"/>
-      </linearGradient>
-    </defs>
-    <g fill="none" stroke="url(#fade)" stroke-width="1">
-      <path d="M -50 80 C 200 20, 400 140, 650 60 S 1000 100, 1050 40"/>
-      <path d="M -50 140 C 220 70, 420 210, 660 130 S 1000 170, 1050 110"/>
-      <path d="M -50 200 C 240 120, 440 280, 670 200 S 1000 240, 1050 180"/>
-      <path d="M -50 260 C 260 170, 460 350, 680 270 S 1000 310, 1050 250"/>
-      <path d="M -50 320 C 280 220, 480 420, 690 340 S 1000 380, 1050 320"/>
-      <path d="M -50 380 C 300 270, 500 480, 700 400 S 1000 450, 1050 390"/>
-    </g>
-    <circle id="descPoint" r="4.5" fill="#E8A33D">
-      <animateMotion dur="9s" repeatCount="indefinite"
-        path="M -20 90 C 220 40, 410 150, 650 70 S 990 105, 1040 50" />
-    </circle>
-  </svg>
-
-  <div class="wrap hero-inner">
-    <div class="eyebrow">AI / ML Engineer</div>
-    <h1>Achyut Yesare<br><em>builds models that learn.</em></h1>
-    <p class="hero-sub">I work at the intersection of machine learning research and production systems — training, evaluating, and shipping models that hold up outside the notebook.</p>
-    <div class="hero-links">
-      <a class="btn primary" href="#projects">View projects</a>
-      <a class="btn" href="resume.pdf">Resume ↓</a>
-      <a class="btn" href="https://github.com/Achyut0617" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://linkedin.com/in/achyut-yesare-a5754a31b" target="_blank" rel="noopener">LinkedIn</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#focus">Focus</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </div>
-</header>
+  </nav>
 
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">About</h2></div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I'm an <strong>AI/ML engineer</strong> focused on the full lifecycle of a model — from data pipelines and training loops to deployment and monitoring. I like problems where the interesting part isn't just accuracy on a benchmark, but whether the thing actually works in production.</p>
-        <p>Recent work spans <strong>deep learning</strong>, <strong>NLP</strong>, and applied research, with a growing focus on making models faster, cheaper, and more reliable to run at scale.</p>
-        <p>Edit this section with your own story, background, and focus areas.</p>
+  <main id="main">
+    <header class="hero" id="home">
+      <svg class="contour-field" viewBox="0 0 960 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6FBFB0" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#6FBFB0" stop-opacity="0.03"/>
+          </linearGradient>
+        </defs>
+
+        <g fill="none" stroke="url(#fade)" stroke-width="1">
+          <path d="M -50 80 C 200 20, 400 140, 650 60 S 1000 100, 1050 40"/>
+          <path d="M -50 140 C 220 70, 420 210, 660 130 S 1000 170, 1050 110"/>
+          <path d="M -50 200 C 240 120, 440 280, 670 200 S 1000 240, 1050 180"/>
+          <path d="M -50 260 C 260 170, 460 350, 680 270 S 1000 310, 1050 250"/>
+          <path d="M -50 320 C 280 220, 480 420, 690 340 S 1000 380, 1050 320"/>
+          <path d="M -50 380 C 300 270, 500 480, 700 400 S 1000 450, 1050 390"/>
+        </g>
+
+        <circle r="4.5" fill="#E8A33D">
+          <animateMotion dur="9s" repeatCount="indefinite" path="M -20 90 C 220 40, 410 150, 650 70 S 990 105, 1040 50"/>
+        </circle>
+      </svg>
+
+      <div class="wrap hero-inner">
+        <div class="eyebrow">AI / ML Engineering · Computer Science</div>
+
+        <h1>Achyut Yesare<br><em>building intelligent systems.</em></h1>
+
+        <p class="hero-sub">
+          I work across machine learning, computer vision, and software engineering.
+          My interest lies in building systems that move beyond experiments —
+          from data preparation and model development to deployment and real-world use.
+        </p>
+
+        <div class="hero-links">
+          <a class="btn primary" href="#projects">Explore projects <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="https://github.com/Achyut0617" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="btn" href="https://linkedin.com/in/achyut-yesare-a5754a31b" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+
+        <p class="hero-note">LEARNING · BUILDING · EXPERIMENTING · IMPROVING</p>
       </div>
-      <div class="stat-block">
-        <div class="row"><div class="label">Based in</div><div class="val">India</div></div>
-        <div class="row"><div class="label">Focus</div><div class="val">Applied ML</div></div>
-        <div class="row"><div class="label">Currently</div><div class="val">Open to roles</div></div>
+    </header>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">01</span>
+          <h2 class="sec-title">About</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a <strong>Computer Science and Engineering student</strong> interested
+              in the engineering behind intelligent systems. I enjoy understanding
+              how data, algorithms, models, and infrastructure work together to solve
+              practical problems.
+            </p>
+
+            <p>
+              My work and learning span <strong>machine learning, deep learning,
+              computer vision, data engineering, and edge AI</strong>. I am particularly
+              interested in the complete lifecycle of an AI system — from data
+              collection and feature engineering to model evaluation, optimization,
+              deployment, and monitoring.
+            </p>
+
+            <p>
+              I also enjoy exploring the systems side of computing: performance,
+              parallel computing, GPU programming, embedded devices, and efficient
+              model execution.
+            </p>
+          </div>
+
+          <div class="about-facts">
+            <div class="fact">
+              <div class="fact-label">Education</div>
+              <div class="fact-value">B.Tech · CSE</div>
+            </div>
+
+            <div class="fact">
+              <div class="fact-label">University</div>
+              <div class="fact-value">MIT ADT University</div>
+            </div>
+
+            <div class="fact">
+              <div class="fact-label">Location</div>
+              <div class="fact-value">India</div>
+            </div>
+
+            <div class="fact">
+              <div class="fact-label">Primary interest</div>
+              <div class="fact-value">Applied AI / ML</div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">02</span>
+          <h2 class="sec-title">Technical toolkit</h2>
+        </div>
+
+        <p class="section-intro">
+          Technologies and tools I have worked with or am actively exploring.
+        </p>
+
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Programming</h3>
+            <ul>
+              <li>Python</li>
+              <li>C / C++</li>
+              <li>JavaScript</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Machine Learning</h3>
+            <ul>
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>scikit-learn</li>
+              <li>Hugging Face</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Data & Computer Vision</h3>
+            <ul>
+              <li>NumPy & Pandas</li>
+              <li>OpenCV</li>
+              <li>Data preprocessing</li>
+              <li>Feature engineering</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Development</h3>
+            <ul>
+              <li>Node.js & Express</li>
+              <li>React & MongoDB</li>
+              <li>REST APIs</li>
+              <li>Git & GitHub</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Systems & Deployment</h3>
+            <ul>
+              <li>Docker</li>
+              <li>Linux & WSL</li>
+              <li>CUDA / OpenMP</li>
+              <li>Azure fundamentals</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Edge & IoT</h3>
+            <ul>
+              <li>Raspberry Pi</li>
+              <li>ONNX Runtime</li>
+              <li>SQLite</li>
+              <li>IoT device integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">03</span>
+          <h2 class="sec-title">Selected projects</h2>
+        </div>
+
+        <p class="section-intro">
+          A selection of engineering work, experiments, and applied AI projects.
+        </p>
+
+        <div class="project-list">
+          <article class="project">
+            <div class="p-index">01</div>
+            <div>
+              <h3 class="p-title">Edge AI Attendance Management System</h3>
+              <p class="p-desc">
+                A local-first attendance system using face detection and recognition.
+                The system performs inference on an edge device, stores attendance
+                records in SQLite, and supports synchronization with a cloud backend.
+              </p>
+              <div class="p-tags">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>ONNX</span>
+                <span>SQLite</span>
+                <span>Edge AI</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="p-index">02</div>
+            <div>
+              <h3 class="p-title">Pneumonia Detection — Distributed ML</h3>
+              <p class="p-desc">
+                A machine learning project focused on pneumonia detection through
+                medical image analysis, with an emphasis on the model development
+                and distributed execution workflow.
+              </p>
+              <div class="p-tags">
+                <span>Machine Learning</span>
+                <span>Deep Learning</span>
+                <span>Computer Vision</span>
+                <span>Python</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="p-index">03</div>
+            <div>
+              <h3 class="p-title">SmartScholar AI Assistant</h3>
+              <p class="p-desc">
+                An AI-focused academic assistant project exploring how software
+                applications can make learning and academic workflows more
+                accessible and efficient.
+              </p>
+              <div class="p-tags">
+                <span>AI</span>
+                <span>JavaScript</span>
+                <span>MERN Stack</span>
+                <span>Application Development</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="p-index">04</div>
+            <div>
+              <h3 class="p-title">Weather Prediction Dashboard</h3>
+              <p class="p-desc">
+                A local machine learning application that uses weather features
+                such as temperature, humidity, and wind speed to demonstrate
+                weather classification and interactive result visualization.
+              </p>
+              <div class="p-tags">
+                <span>Python</span>
+                <span>scikit-learn</span>
+                <span>Data Analysis</span>
+                <span>Streamlit</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="p-index">05</div>
+            <div>
+              <h3 class="p-title">Azure IoT Cold-Storage Monitoring</h3>
+              <p class="p-desc">
+                An IoT monitoring prototype exploring sensor data collection,
+                local threshold checks, offline storage, and reliable delivery
+                of pending telemetry to a cloud IoT platform.
+              </p>
+              <div class="p-tags">
+                <span>Python</span>
+                <span>SQLite</span>
+                <span>IoT</span>
+                <span>Azure IoT Hub</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">04</span>
+          <h2 class="sec-title">Areas of exploration</h2>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-item">
+            <h3>AI / ML Engineering</h3>
+            <p>Model development, evaluation, feature engineering, and production-oriented ML workflows.</p>
+          </div>
+
+          <div class="focus-item">
+            <h3>Edge AI & Embedded Systems</h3>
+            <p>Efficient inference, model optimization, hardware-aware deployment, and IoT integration.</p>
+          </div>
+
+          <div class="focus-item">
+            <h3>Data Engineering</h3>
+            <p>Data pipelines, preprocessing, data quality, feature preparation, and reliable data workflows.</p>
+          </div>
+
+          <div class="focus-item">
+            <h3>High-Performance Computing</h3>
+            <p>Parallel computing, GPU programming, CUDA, and performance-oriented system design.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">05</span>
+          <h2 class="sec-title">Contact</h2>
+        </div>
+
+        <h2 class="contact-title">
+          Interested in building something <span class="accent">meaningful?</span>
+        </h2>
+
+        <p class="contact-copy">
+          I'm interested in connecting with engineers, researchers, and teams
+          working on machine learning, intelligent systems, and deep technology.
+          Feel free to explore my work or connect with me.
+        </p>
+
+        <div class="contact-links">
+          <a class="btn primary" href="https://linkedin.com/in/achyut-yesare-a5754a31b" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/Achyut0617" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 Achyut Yesare</p>
+      <p>DESIGNED & BUILT WITH HTML + CSS</p>
     </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Skills</h2></div>
-    <div class="skill-groups">
-      <div class="skill-group">
-        <h4>Languages</h4>
-        <ul><li>Python</li><li>SQL</li><li>C++</li><li>JavaScript</li></ul>
-      </div>
-      <div class="skill-group">
-        <h4>ML / DL</h4>
-        <ul><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>Hugging Face</li></ul>
-      </div>
-      <div class="skill-group">
-        <h4>Tooling</h4>
-        <ul><li>Docker</li><li>Git</li><li>AWS / GCP</li><li>MLflow</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Projects</h2></div>
-
-    <div class="project">
-      <div class="p-index">01</div>
-      <div>
-        <div class="p-title">Project One</div>
-        <p class="p-desc">Replace with a one- or two-sentence description: what the model does, what problem it solves, and any results worth noting (accuracy, latency, scale).</p>
-        <div class="p-tags"><span>PyTorch</span><span>NLP</span><span>Transformers</span></div>
-        <a class="p-link" href="#">View repo →</a>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="p-index">02</div>
-      <div>
-        <div class="p-title">Project Two</div>
-        <p class="p-desc">Replace with your second project. Lead with the outcome, then the method.</p>
-        <div class="p-tags"><span>Computer Vision</span><span>TensorFlow</span></div>
-        <a class="p-link" href="#">View repo →</a>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="p-index">03</div>
-      <div>
-        <div class="p-title">Project Three</div>
-        <p class="p-desc">Replace with your third project — could be a research reproduction, a deployed pipeline, or a Kaggle result.</p>
-        <div class="p-tags"><span>MLOps</span><span>Docker</span><span>AWS</span></div>
-        <a class="p-link" href="#">View repo →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap contact-inner">
-    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Contact</h2></div>
-    <div class="contact-title">Let's build something <span class="accent">that learns.</span></div>
-    <p style="color:var(--ink-dim); max-width:50ch;">Open to AI/ML roles and collaborations. Reach out by email or on LinkedIn.</p>
-    <div class="contact-links">
-      <a class="btn primary" href="mailto:your-email@example.com">Email me</a>
-      <a class="btn" href="https://github.com/Achyut0617" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn" href="https://linkedin.com/in/achyut-yesare-a5754a31b" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Achyut Yesare — built with care.</p>
-</footer>
-
+  </footer>
 </body>
 </html>
+```
